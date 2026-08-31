@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";  
+
+@theme inline {
+  --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --color-canvas: #0e1117;
+  --color-surface: #161b27;
+  --color-card: #1e2535;
+  --color-card-hover: #242c40;
+  --color-border: #2a3348;
+  --color-text: #e8eaf2;
+  --color-muted: #6b7599;
+  --color-todo: #3b5bdb;
+  --color-progress: #f59f00;
+  --color-review: #ae3ec9;
+  --color-done: #37b24d;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3348 transparent;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a3348; border-radius: 9999px; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: var(--color-text);
+}
+
