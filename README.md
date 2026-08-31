@@ -1,80 +1,84 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# Tablero Kanban — FlotaControl
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de control de unidades de transporte con tablero Kanban. Permite visualizar, mover y administrar la flota en tiempo real según su estado operativo.
 
-Currently, two official plugins are available:
+![Vista previa del tablero Kanban](IMG/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descripción
 
-## React Compiler
+El sistema clasifica las unidades en **4 estados principales**:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Estado | Descripción |
+|--------|-------------|
+| **Cargando** | Unidad en proceso de carga |
+| **En Ruta** | Unidad en tránsito hacia su destino |
+| **Descargando** | Unidad descargando mercancía |
+| **Vacío** | Unidad disponible sin carga asignada |
 
-## Expanding the ESLint configuration
+Cada tarjeta muestra información clave: placa, operador, origen, destino, tipo de carga, toneladas y hora.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Tablero Kanban con 4 columnas de estado
+- Arrastrar y soltar unidades entre columnas
+- Crear, editar y eliminar unidades
+- Mover unidades entre estados desde el menú de cada tarjeta
+- Contador de unidades por estado en el encabezado
+- Interfaz oscura optimizada para operación logística
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tecnologías
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite 8](https://vite.dev/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
 
+## Requisitos
+
+- Node.js 18 o superior
+- npm
+
+## Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/luis-zaldivar/tablero_kanban.git
+cd tablero_kanban
+
+# Instalar dependencias
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Uso
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Servidor de desarrollo
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Compilar para producción
+npm run build
+
+# Vista previa de la build
+npm run preview
+```
+
+La aplicación se abre en `http://localhost:5173` (o el siguiente puerto disponible).
+
+## Estructura del proyecto
 
 ```
-=======
-# tablero_kanban
-El sistema clasifica las unidades en 4 estados principales
->>>>>>> 0e6afc9c6f193973187ef9e2a5f481d27ff71506
+tablero_kanban/
+├── IMG/                 # Capturas y recursos visuales
+├── public/              # Archivos estáticos
+├── src/
+│   ├── App.tsx          # Componente principal del tablero
+│   ├── main.tsx         # Punto de entrada
+│   └── index.css        # Estilos globales y tema
+├── index.html
+├── vite.config.ts
+└── package.json
+```
+
+## Licencia
+
+Proyecto privado.
