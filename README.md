@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -73,3 +74,7 @@ export default defineConfig([
 ])
 
 ```
+=======
+# tablero_kanban
+El sistema clasifica las unidades en 4 estados principales
+>>>>>>> 0e6afc9c6f193973187ef9e2a5f481d27ff71506
